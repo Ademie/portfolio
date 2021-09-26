@@ -11,6 +11,7 @@
   h1 {
     font-size: 50px;
     color: $primaryColor;
+    overflow: hidden!important;
     @include mobile {
       font-size: 20px;
     }
@@ -33,6 +34,8 @@
     width: 70%;
     @include flexy();
     flex-wrap: wrap;
+    overflow: hidden!important;
+
     @include tablet{
       flex-wrap: wrap;
       width: 100%;
