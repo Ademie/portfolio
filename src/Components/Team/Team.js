@@ -6,32 +6,30 @@ function Team() {
   const data = [
     {
       id: 1,
-      icon: "/assets/camlogo.png",
-      title: "Photographer",
-      desc: "Hello, I am a Photographer with 5 years experience and vMedia's team leader",
-      img: "/assets/TM.jpg",
-      name: "Oluwadare Toromo",
-      // qvjO4VpWwNw  m8uLhKTiL8Y
-      // img: "https://source.unsplash.com/qvjO4VpWwNw"
-      links: "https://web.facebook.com/oluwadare.oluwatoromo"
+      icon: "/assets/whatsapp.svg",
+      title: "About Me",
+      desc: "Hello, thanks for stopping by; I am a motivated front end developer seeking to use my knowledge of web developemt and soft skills to meet organizational needs.",
+      img: "/assets/pass.jpg",
+      name: "Adesanoye Isijola (Ademie)",
+      links: "https://web.facebook.com/oluwadare.oluwatoromo",
     },
     {
       id: 2,
-      icon: "/assets/camlogo.png",
-      title: "Designer",
-      desc: "Hello, I am the team leader for all the cool designs on vMedia. We'd love to work with you",
-      name: "Aina Emmanuel",
-      img: "/assets/Linux1.jpg",
-      links: "https://web.facebook.com/emmanuel.olamideaina",
+      icon: "/assets/linkedin.svg",
+      title: "Tech Skills",
+      desc: "Git || HTML || CSS || SaSS || JS || React || Wordpress",
+      img: "/assets/pass.jpg",
+      name: "Adesanoye Isijola (Ademie)",
+      links: "https://web.facebook.com/oluwadare.oluwatoromo",
     },
     {
       id: 3,
-      icon: "/assets/camlogo.png",
-      title: "Videography",
-      desc: "Hi I am Akinwole, the videography team leader, it's so nice to meet you.",
-      name: "Akinwole Oluwapelumi",
-      img: "/assets/pelumi.jpg",
-      links: "https://web.facebook.com/akinwole.pelumi"
+      icon: "/assets/github.svg",
+      title: "Soft Skills",
+      desc: "Time Management || Interpersonal Skills || Communication || Teamwork || Creative Thinking",
+      img: "/assets/pass.jpg",
+      name: "Adesanoye Isijola (Ademie)",
+      links: "https://web.facebook.com/oluwadare.oluwatoromo",
     },
   ];
   //   handle click funcion
@@ -57,13 +55,14 @@ function Team() {
                   <div className="leftContainer">
                     <div className="imgContainer">
                       <a href={d.links}>
-                        <img src="/assets/facebook.svg" />
+                        <img src={d.icon} />
                       </a>
                     </div>
                     <h3>{d.title}</h3>
                     <p>{d.desc} </p>
-                    <h5>{d.name}</h5>
-                    {/* <span href={d.links}>Facebook</span> */}
+                    <a href={d.links} style={{color:"black"}}>
+                      <h4>{d.name}</h4>
+                    </a>
                   </div>
                 </div>
                 <div className="right">

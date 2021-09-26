@@ -1,54 +1,46 @@
 import React, { useState, useEffect } from "react";
-import { studioPortfolio, naturePortfolio, outdoorPortfolio, photoshopPortfolio, randomPortfolio } from "../../data";
+import { showcase, cssjs, react, wordpress } from "../../data";
 import "../Portfolio/portfolio.scss";
 import PortfolioList from "../PortfolioList/PortfolioList";
 
-
 function Portfolio() {
-  const [selected, setSelected] = useState("studio");
+  const [selected, setSelected] = useState("showcase");
   const [data, setData] = useState([]);
   const list = [
     {
-      id: "studio",
-      title: "Studio",
+      id: "showcase",
+      title: "Showcase",
     },
     {
-      id: "nature",
-      title: "Nature",
+      id: "cssjs",
+      title: "CSS/JS",
     },
     {
-      id: "outdoor",
-      title: "Outdoor",
+      id: "react",
+      title: "React/Sass",
     },
     {
-      id: "photoshop",
-      title: "Photoshop",
-    },
-    {
-      id: "random",
-      title: "Random",
+      id: "wordpress",
+      title: "Wordpress",
     },
   ];
   // use effect to display portfolio items
   useEffect(() => {
     switch (selected) {
-      case "studio":
-        setData(studioPortfolio);
+      case "showcase":
+        setData(showcase);
         break;
-      case "nature":
-        setData(naturePortfolio);
+      case "cssjs":
+        setData(cssjs);
         break;
-      case "outdoor":
-        setData(outdoorPortfolio);
+      case "react":
+        setData(react);
         break;
-      case "photoshop":
-        setData(photoshopPortfolio);
-        break;
-      case "random":
-        setData(randomPortfolio);
+      case "wordpress":
+        setData(wordpress);
         break;
       default:
-        setData(studioPortfolio);
+        setData(showcase);
     }
   }, [selected]);
   return (
@@ -66,19 +58,19 @@ function Portfolio() {
       </ul>
       <div className="container">
         {data.map((d) => {
-          return(
+          return (
             <div className="item">
-            <img
+              {/* <img
               src={d.img}
-              alt=""
-            />
-            <h3>{d.title}</h3>
-          </div>
-
-          )
+              alt="portfolio"
+            /> */}
+              <a href={d.links}>
+                <img src={d.img} alt="portfolio" />
+              </a>
+              <h3>{d.title}</h3>
+            </div>
+          );
         })}
-
-
       </div>
     </div>
   );

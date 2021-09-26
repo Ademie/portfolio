@@ -4,11 +4,10 @@ import Navbar from "./Components/Navbar/Navbar";
 import Portfolio from "./Components/Portfolio/Portfolio";
 import Works from "./Components/Works/Works";
 import Team from "./Components/Team/Team";
-import Testimonials from "./Components/Testimonials/Testimonials";
+import Services from "./Components/Services/Services";
 import Contact from "./Components/Contact/Contact";
 import './App.scss'
 import Menu  from './Components/Menu/Menu';
-import MessengerCustomerChat from "react-messenger-customer-chat";
 
 
 
@@ -25,11 +24,10 @@ function App() {
         <Intro/>
         <Portfolio/>
         <Works/>
-        <Testimonials/>
+        <Services/>
         <Team/>
         <Contact/>
       </div>
-      <MessengerCustomerChat style={{height:"0px"}} pageId="272925574521401" appId="332992658602823" />
     </div>
   );
 }

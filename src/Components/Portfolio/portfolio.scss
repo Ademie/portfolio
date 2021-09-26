@@ -3,13 +3,14 @@
 
 .portfolio {
   background: white;
+  background: rgba(0, 0, 0, 0.959)!important;
   @include hidescroll();
   @include flexy();
   flex-direction: column;
 
   h1 {
     font-size: 50px;
-
+    color: $primaryColor;
     @include mobile {
       font-size: 20px;
     }
@@ -32,6 +33,10 @@
     width: 70%;
     @include flexy();
     flex-wrap: wrap;
+    @include tablet{
+      flex-wrap: wrap;
+      width: 100%;
+    }
     @include mobile {
       width: 100%;
     }
@@ -56,14 +61,26 @@
 
       h3 {
         position: absolute;
+        text-align: center;
         font-size: 20px;
+        font-size: clamp(12px, 3vh, 20px);
+        display: none;
+        @include mobile{
+          font-size: 12px;
+        }
       }
-
+      a{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        overflow: hidden;
+      }
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         z-index: 1;
+        background: black;
       }
 
       &:hover {
@@ -71,6 +88,13 @@
         img {
           opacity: 0.2;
           z-index: 0;
+          transition: all 1s ease-in!important;
+
+        }
+        h3{
+          display: block;
+          transition: all 1s ease-in!important;
+
         }
       }
     }

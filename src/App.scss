@@ -4,35 +4,41 @@ html,
 body {
   width: auto !important;
   overflow-x: hidden !important;
+  background: black;
+  z-index: -40;
 }
-*, *::before, *::after{  
-    margin: 0;
-    padding:0;
-    box-sizing: inherit!important;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit !important;
+  // font-family: "Ubuntu", sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  overflow: hidden;
 }
-html{
-    box-sizing: border-box!important;
+html {
+  box-sizing: border-box !important;
 }
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
+}
+.app {
+  height: 100vh;
 
-}
-.app{
-    height: 100vh;
+  .sections {
+    width: 100%;
+    height: calc(100vh - 70px);
+    position: relative;
+    top: 70px;
+    scroll-behavior: smooth;
+    z-index: 10;
+    @include hidescroll();
 
-    .sections{
-        width: 100%;
-        height: calc(100vh - 70px);
-        position: relative;
-        top: 70px;
-        scroll-behavior: smooth;
-        @include hidescroll();
-
-        > *{
-            width: 100vw;
-            height:calc(100vh - 70px) ;
-            scroll-snap-align:start;
-        }
+    > * {
+      width: 100vw;
+      height: calc(100vh - 70px);
+      scroll-snap-align: start;
     }
+  }
 }

@@ -1,6 +1,7 @@
 @import "../../mixin.scss";
+@import "../../variables.scss";
 .contact {
-  background: white;
+  background: $secondB;
   display: flex;
 
   @include mobile {
@@ -8,11 +9,15 @@
   }
 
   .left {
-    flex: 1;
+    flex: 0.5;
     @include flexy();
     flex-direction: column;
+    @include tablet{
+      flex-basis: 40%;
+    }
     h2 {
       font-size: 30px;
+      color: $primaryColor;
     }
 
     form {
@@ -26,6 +31,10 @@
         width: 300px;
         height: 30px;
         font-size: 14px;
+        background: transparent;
+        border: 1px solid $primaryColor;
+        padding-left: 5px;
+        color: white;
         @include mobile {
           width: 200px;
           height: 20px;
@@ -33,9 +42,13 @@
       }
 
       textarea {
+        padding-left: 5px;
         width: 300px;
         height: 200px;
         font-size: 14px;
+        color: white;
+        background: transparent;
+        border: 1px solid $primaryColor;
         @include mobile{
           width: 200px;
           height: 100px;
@@ -43,43 +56,50 @@
       }
       button {
         width: 300px;
-        height: 30px;
-        color: white;
-        background: #e91c97;
+        height: 40px;
+        color: black;
+        background: $primaryColor;
         border: none;
         outline: none;
         border-radius: 10px;
         font-weight: 500;
         cursor: pointer;
         border-radius: 10px;
-        box-shadow: 0 7px rgb(133, 133, 133);
         @include mobile{
           width: 200px;
           height: 20px;
         }
         &:hover {
-          background: #f4129a;
+          @include shadow();
         }
         &:active {
-          background-color: #f4129a;
+          background-color: $primaryColor;
           box-shadow: 0 3px #666;
           transform: translateY(4px);
         }
       }
 
       span {
-        color: #f4129a;
+        color: $primaryColor;
         text-align: center;
       }
     }
   }
   .right {
-    flex: 1;
+    flex: 0.5;
     overflow: hidden;
-    background: rebeccapurple;
-    img {
-      height: 90%;
-      filter: hue-rotate(-40deg);
+    background: $secondB;
+    @include tablet{
+      flex-basis: 30%;
     }
+
+    img {
+      height: 70vh;
+      // filter: hue-rotate(-40deg);
+      @include tablet{
+        width: 100%;
+       }
+    }
+    
   }
 }

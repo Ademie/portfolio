@@ -1,122 +1,265 @@
 @import "../../mixin.scss";
+@import "../../variables.scss";
+.intro {
+  @include flexy();
+  @include hidescroll();
+  padding-left: clamp(100px, 10%, 200px);
+  padding-right: clamp(50px, 5%, 100px);
+  @include tablet{
+    padding-right:0px!important;
+    padding-left: 0px!important;
+  }
 
-.intro{
-    background: white;
+  @include mobile {
+    flex-direction: column;
+    padding: 0px !important;
+    margin-top: -8vh;
+  }
+  .overlay {
+    background: rgba(0, 0, 0, 0.367);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+  }
+  //   Left container
+  .left {
+    flex: 0.4;
+    overflow: hidden;
+
+    .imgContainer {
+      max-width: 70%;
+      max-height: 70%;
+      background-color: rgba(0, 0, 0, 0.796);
+      border-radius: 50%;
+      @include flexy();
+      @include mobile {
+        align-items: flex-start;
+      }
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        height: clamp(50%, 50vw, 90%);
+        position: absolute;
+        @include tablet{
+          height: 45%;
+        }
+        @include mobile {
+          height: 40%;
+          margin-top: 20px;
+          margin-bottom: 0px;
+        }
+        @include small {
+          margin-top: 0vh;
+        }
+      }
+    }
+  }
+  //   right container
+  .right {
+    flex: 0.4;
+
+    position: relative;
+    overflow: hidden;
+    // WRAPPER AROUND ALL CONTENTS
+    .wrapper {
+      box-sizing: border-box;
+      width: 100% !important;
+      height: 100%;
+      height: 80vh;
+      overflow: hidden;
+      padding-left: 50px;
+      color: white;
+      @include flexy();
+      flex-direction: column;
+      align-items: flex-start;
+      @include mobile {
+        padding-left: 0;
+        min-width: 80vw;
+        max-width: 80vw;
+        text-align: center !important;
+        align-items: center;
+        margin-top: -20vh;
+      }
+     
+      @include small {
+        margin-top: -25vh;
+      }
+
+      h1 {
+        font-size: 3.8rem;
+        margin: 0.6rem 0;
+        @include mobile {
+          font-size: 40px;
+        }
+        @include small{
+          margin-bottom: 0vh;
+          margin-top: 0vh;
+        }
+
+      }
+      h3 {
+        font-size: 1.9rem;
+        @include mobile {
+          font-size: 20px;
+        }
+        @include small{
+          margin-bottom: -1vh;
+          // margin-top: 0vh;
+        }
+        // typed text
+        span {
+          font-size: inherit;
+          color: $primaryColor;
+        }
+
+        // Animation for typed text
+        .ityped-cursor {
+          animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+          50% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+  //   social media icons
+  .socials {
+    padding: 20px 0px;
+    @include mobile {
+      margin-top: -2vh;
+    }
+    @include small {
+      padding-top: 2vh;
+      padding-bottom: 2vh;
+    }
+    ul {
+      display: inline;
+    }
+    li {
+      width: 60px;
+      height: 50px;
+      @include flexy();
+      overflow: hidden;
+      margin-right: 0px;
+      padding: 0px;
+      transition: all 1s ease-in;
+      float: left;
+      @include mobile {
+        width: 50px;
+      }
+      @include small {
+        width: 45px;
+      }
+      &:hover {
+        transform: scale(1.4) !important;
+        @include mobile {
+          transform: scale(1.3) !important;
+        }
+      }
+      &:nth-child(2) a {
+        color: #1f8bbd !important;
+        font-size: 40px;
+      }
+      &:nth-child(3) a {
+        color: white !important;
+      }
+      // social media link tags
+      a {
+        color: $primaryColor;
+        font-size: 3.5vh;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+    }
+  }
+  // RESUME DOWNLOAD
+  .resume {
+    background: $primaryColor;
+    border-radius: 10px;
+    color: black;
+    font-size: 1.9rem;
+    transition: all 1s ease-in;
     @include flexy();
-    @include hidescroll();
-    
+    font-size: 2.6vh;
+    padding: 10px 20px;
+    &:active {
+      background-color: $primaryColor;
+      box-shadow: 0 3px #666;
+      transform: translateY(4px) !important;
+    }
+
+    // RESPONSIVE
+    @include mobile {
+      font-size: 2.2vh;
+      margin-top: -2vh;
+    }
+    @include small {
+      margin-top: -4vh;
+    }
+
+    // animation: arrowBlink 2s 5;
+    &:hover {
+      @include shadow();
+      @include mobile {
+        box-shadow: none;
+        box-shadow: 0 0 15px $primaryColor, 0 0 10px $primaryColor,
+          0 0 20px $primaryColor;
+      }
+    }
+  }
+  @keyframes arrowBlink {
+    100% {
+      opacity: 0.7;
+    }
+  }
+  .navarrow {
+    position: absolute;
+    background: transparent;
+    color: white;
+    overflow: hidden;
+    bottom: 100px;
+    font-size: 3vh;
+    left: 60%;
+    animation: arrowBlink 2s infinite;
+    @include mobile {
+      left: 47%;
+      bottom: 50px;
+    }
+
+    img {
+      width: 30px;
+      filter: grayscale(100%) !important;
+      animation: arrowBlink 2s infinite;
+    }
+
+    @keyframes arrowBlink {
+      100% {
+        opacity: 0.4;
+      }
+    }
+  }
+  .toparrow{
+    background:$primaryColor; 
+    font-size:40px; 
+    position:fixed; 
+    bottom:0px; 
+    color: black!important;
+    right:150px;
+    border-radius: 10px 10px 0px 0px;
+    transition: 1s ease-in;
+    z-index: 18;
     @include mobile{
-        flex-direction: column;
-
+      right: 10px;
     }
-    .left{
-        flex: 0.5;
-        overflow: hidden;
-
-        .imgContainer{
-            width: 43.8rem;
-            height: 43.8rem;
-            background-color: rebeccapurple;
-            border-radius: 50%;
-            @include flexy();
-            @include mobile{
-                align-items: flex-start;
-            }
-            img{
-                height: 60%;
-                animation: rotation 2.5s infinite linear;
-                @include mobile{
-                    height: 40%;
-                    margin-top: 20px;
-                }
-            }
-            @keyframes rotation {
-                from {
-                  transform: rotate(0deg);
-                }
-                to {
-                  transform: rotate(359deg);
-                }
-              }
-        }
+    &:hover{
+      @include shadow();
     }
-    .right{
-        flex: 0.5;
-        .wrapper{
-            width: 100%;
-            height: 100%;
-            // padding-left: 50px;
-            @include flexy();
-            flex-direction: column;
-            align-items: flex-start;
+  }
 
-            @include mobile{
-                padding-left: 0;
-                min-width: 80vw;
-                max-width: 80vw;
-                text-align: center!important;
-                align-items: center;
-            }
-
-
-            h1{
-                font-size: 3.8rem;
-                margin: 0.6rem 0;
-                @include mobile{
-                    font-size: 40px;
-                }
-            }
-            h2{
-                font-size: 2.2rem;
-                @include mobile{
-                    font-size: 20px;
-                }
-            }
-            h3{
-                font-size: 1.9rem;
-                @include mobile{
-                    font-size: 20px;
-
-                }
-                // typed text
-                span{
-                    font-size: inherit;
-                    color: rebeccapurple;                    
-                }
-                
-                // Animation for typed text
-                .ityped-cursor{
-                    animation: blink 1s infinite;
-                }
-
-                @keyframes blink{
-                    50%{
-                        opacity: 1;
-                    }
-                    100%{
-                        opacity: 0;
-                    }
-                }
-            }
-        }
-        .navarrow{
-            position: absolute;
-            bottom: 10px;
-            left: 60%;
-                @include mobile{
-                    left: 47%;
-                }
-
-            img{
-                width: 30px;
-                animation: arrowBlink 2s infinite;
-            }
-
-            @keyframes arrowBlink{
-                100%{
-                    opacity: 0.4;
-                }
-            }
-        }
-    }
 }

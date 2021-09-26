@@ -1,47 +1,48 @@
 @import "../../mixin.scss";
-
+@import "../../variables.scss";
 .team {
-  background: white;
+  background: $firstB;
   @include flexy();
-  @include mobile{
+  @include mobile {
     position: relative;
   }
-//   direction  indicator
+  //   direction  indicator
 
-.arrow{
+  .arrow {
     height: 50px;
     position: absolute;
-    // filter: invert(100%);
-    filter: none;
+    filter: invert(100%);
     cursor: pointer;
-    @include mobile{
+    animation: arrowBlink 2s infinite;
+
+    @include mobile {
       // display: none;
       height: 25px;
       filter: none;
     }
-    &.right{
-        right: 150px;
-        transform: rotate(-90deg);
-        @include mobile{
-          bottom: 33%;
-          right: 50px;
-          filter: invert(100%);
-        }
+    &.right {
+      right: 150px;
+      transform: rotate(-90deg);
+      @include mobile {
+        bottom: 33%;
+        right: 50px;
+        filter: invert(100%);
+      }
     }
-    &.left{
-        left: 150px;
-        transform: rotate(90deg);
-        @include mobile{
-          bottom: 33%;
-          left: 50px;
-        }
+    &.left {
+      left: 150px;
+      transform: rotate(90deg);
+      @include mobile {
+        bottom: 33%;
+        left: 50px;
+      }
     }
-}
-// carousel
+  }
+  // carousel
   .slider {
     height: 350px;
     display: flex;
-    
+
     position: absolute;
     left: 0;
     transition: all 1s ease-in;
@@ -54,15 +55,13 @@
     .container {
       width: 100vw;
       @include flexy();
-      
       padding-bottom: 40px;
       .item {
         width: 700px;
         height: 100% !important;
         box-shadow: 0px 0px 15px -8px black;
         background: rgb(247, 246, 246);
-
-        border-radius: 20px;
+        background: white;
         &:hover {
           box-shadow: 0px 0px 20px -8px black;
         }
@@ -70,33 +69,34 @@
         @include mobile {
           width: 90vw;
           // margin: 45px 0px;
-
         }
-  
 
         .left {
           flex: 5;
           height: 80%;
           @include flexy();
-
+          
           .leftContainer {
             width: 90%;
             height: 70%;
+            @include mobile{
+              height: 100%;
+            }
             @include flexy();
             flex-direction: column;
             justify-content: space-between;
             align-items: flex-start;
             .imgContainer {
-              width: 45px;
-              height: 45px;
-              border-radius: 50%;
-              background: white;
+              width: 60px;
+              height: 60px;
+              background: whitesmoke;
               @include flexy();
               position: relative;
               z-index: 4;
 
               img {
                 width: 40px;
+                height: 40px;
               }
             }
             h2 {
@@ -116,21 +116,19 @@
         .right {
           flex: 5;
           height: 100%;
-          background: rebeccapurple;
+          background-color: whitesmoke;
           @include flexy();
           border-radius: 0%;
 
           img {
-            // min-width: 400px;
+            @include flexy();
             border-radius: 50%;
             max-width: 100%;
             max-width: 200px;
             max-height: 200px;
-            // max-width: 80%;
-            // min-width: 80%;
-            // max-height: 100%;
-            // transform: rotate(-10deg);
-            overflow: hidden;
+            background-color: rgba(39, 52, 52, 0.599);
+            border: 10px solid black;
+            transform: rotate(5deg);
           }
         }
       }

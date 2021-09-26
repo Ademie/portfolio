@@ -1,4 +1,10 @@
-$width: 768px;
+$mobilewidth: 768px;
+$smallerscreen: 350px;
+$iphoneX:380px;
+$tablet:920px;
+$small-mobile: 500px;
+$ipad:800px;
+$ultra: 330px;
 
 @mixin flexy {
   display: flex;
@@ -9,6 +15,11 @@ $width: 768px;
   background: $mainColor;
   position: fixed;
   top: 0;
+}
+
+// box shadow
+@mixin shadow{
+  box-shadow:0 0 10px $primaryColor, 0 0 40px $primaryColor, 0 0 80px $primaryColor;
 }
 
 @mixin hidescroll {
@@ -22,7 +33,48 @@ $width: 768px;
 
 // responsiveness
 @mixin mobile{
-  @media (max-width: #{$width}) {
+  @media (max-width: #{$mobilewidth}) {
     @content
   }
 }
+// smaller screen
+@mixin small{
+  @media (max-width: #{$smallerscreen}) {
+    @content
+  }
+}
+
+// iphone x
+@mixin iphonex{
+  @media (max-width: #{$iphoneX}) {
+    @content
+  }
+}
+// Tablets
+@mixin tablet{
+  @media (max-width: #{$tablet}) {
+    @content
+  }
+}
+
+// Small Mobile
+@mixin small-mobile{
+  @media (max-width: #{$small-mobile}) {
+    @content
+  }
+}
+
+// iPad mini
+@mixin ipad{
+  @media (max-width: #{$ipad}) {
+    @content
+  }
+}
+
+// Ultra iPhone 5 and 5s
+@mixin ultra{
+  @media (max-width: #{$ultra}) {
+    @content
+  }
+}
+

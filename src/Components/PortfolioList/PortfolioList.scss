@@ -1,18 +1,25 @@
 @import "../../variables.scss";
 @import "../../mixin.scss";
 .portfolioList{
-    font-size: 14px;
+    font-size: clamp(10px, 3vh, 18px);
     margin-right: 40px;
     padding: 7px;
     cursor: pointer;
     border-radius: 5px;
+    color: white;
 
     @include mobile {
       margin-right: 5px;
+      font-size: 16px;
+    }
+    @include small{
+      font-size: 12px;
     }
 
     &.active {
       background: $mainColor;
-      color: white;
+      background: $primaryColor;
+      color: black;
+      // @include shadow();
     }
   }

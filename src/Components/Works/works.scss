@@ -1,8 +1,11 @@
 @import "../../mixin.scss";
-
+@import "../../variables.scss";
 .works {
-  background: rebeccapurple;
+  background: $firstB;
   @include flexy();
+  @include tablet{
+    position: relative;
+  }
   @include mobile{
     position: relative;
   }
@@ -10,28 +13,49 @@
 
 .arrow{
     height: 50px;
+    height: 6vh;
     position: absolute;
     filter: invert(100%);
     cursor: pointer;
-    @include mobile{
-      // display: none;
-      height: 25px;
-      filter: none;
+    animation: arrowBlink 2s infinite;
+
+    @include tablet{
+      bottom: 20%!important;
     }
+    @include ipad{
+      filter: invert(100%)!important;
+      height: 6vh!important;
+    }
+    @include mobile{
+      bottom: 29%;
+      height: 25px;
+      // background: yellowgreen;
+    }
+    @include small-mobile{
+      bottom: 32%;
+    }
+    @include small{
+      bottom: 15%;
+    }
+    @include ultra{
+            filter: none!important;
+
+    }
+    // @include iphonex{
+    //   bottom: 27%!important;
+    //   height: 4vh!important;
+    // }
     &.right{
         right: 150px;
         transform: rotate(-90deg);
         @include mobile{
-          bottom: 33%;
           right: 50px;
-          filter: invert(100%);
         }
     }
     &.left{
         left: 150px;
         transform: rotate(90deg);
         @include mobile{
-          bottom: 33%;
           left: 50px;
         }
     }
@@ -42,7 +66,8 @@
     display: flex;
     position: absolute;
     left: 0;
-    transition: all 1s ease-in;
+    transition: all 0.5s ease-in;
+    
     @include mobile {
       // height: 0vh;
       // flex-direction: column;
@@ -51,6 +76,10 @@
 
     .container {
       width: 100vw;
+      transition: all 0.5s ease-in;
+      &:hover{
+        transform: scaleX(1.02) !important;
+      }
       @include flexy();
       padding-bottom: 40px;
       .item {
@@ -73,7 +102,7 @@
 
           .leftContainer {
             width: 90%;
-            height: 70%;
+            height: 100%;
             @include flexy();
             flex-direction: column;
             justify-content: space-between;
@@ -82,7 +111,6 @@
               width: 40px;
               height: 40px;
               border-radius: 50%;
-              background: rgba(233, 60, 181, 0.449);
               @include flexy();
               position: relative;
               z-index: 4;
@@ -95,7 +123,11 @@
               font-size: 20px;
             }
             p {
-              font-size: 13px;
+              font-size: clamp(10px, 2vh, 18px);
+              @include mobile{
+                font-size: 11px;
+                max-width: 50vw;
+              }
             }
             span {
               font-size: 12px;
@@ -110,12 +142,13 @@
           height: 100%;
           @include flexy();
           border-radius: 0%;
-          background: rgb(233, 60, 181);
+          // background: rgb(233, 60, 181);
 
           img {
-            width: 400px;
-            max-width: 100%;
-            max-height: 100%;
+            // width: 400px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             // transform: rotate(-10deg);
             overflow: hidden;
           }

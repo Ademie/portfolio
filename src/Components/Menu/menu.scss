@@ -8,6 +8,7 @@
     right: -18.75rem;
     top: -18.75rem;
     z-index: 2;
+    z-index: 12;
     @include flexy();
     flex-direction: column;
     transition: all 1s ease-in;
@@ -31,13 +32,15 @@
             a{
                 font-size: inherit;
                 color: white;
+                &:hover{
+                    color: $primaryColor!important;
+                    font-weight: 1200!important;
+                }
                 @include mobile{
                     font-size: 80%;
                 }
             }
-            &:hover{
-                font-weight: 900!important;
-            }
+            
         }
     }
 }

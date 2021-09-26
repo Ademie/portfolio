@@ -27,7 +27,7 @@ function Contact() {
   return (
     <div className="contact" id="contact">
       <div className="left">
-        <h2>Contact Us</h2>
+        <h2>Contact Me</h2>
         <form action="" onSubmit={handleSubmit(submitForm)}>
         <span style={{textTransform:"capitalize"}}>{errors.email?.message}</span>
 
@@ -38,16 +38,16 @@ function Contact() {
             {...register("email")}
           />
 
-          <textarea placeholder="Message" cols="30" rows="10" required></textarea>
+          <textarea placeholder="Message" contentEditable="false" required></textarea>
 
           <button type="submit">Send</button>
           {message && (
-            <span id='msg' style={{fontSize: "90%"}}>Thanks for your Message, We'd get back to you</span>
+            <span id='msg' style={{fontSize: "90%"}}>Thank you for your Message, I'd get back to you</span>
           )}
         </form>
       </div>
       <div className="right">
-        <img src="/assets/stickquestion.png" alt="" />
+        <img src="/assets/contact.png" alt="" />
         <h5 style={{ textAlign: "center", color: "white" }}>
           Designed | <a href="https://ademie.netlify.app" style={{ textDecoration: "underline", color: "white" }}>Ademie</a>
         </h5>

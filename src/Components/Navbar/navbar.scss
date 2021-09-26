@@ -1,15 +1,25 @@
 @import "../../variables.scss";
 @import "../../mixin.scss";
+// #4B4B4E
+//#88E5CA
 .navbar {
   width: 100%;
   height: 70px;
-  color: white;
+  color: $primaryColor;
+  background:#030706!important;
   z-index: 3;
+  z-index: 14;
   transition: all 1.5s ease-in;
   @include bars();
 
   .wrapper {
-    padding: 10px 30px;
+    padding: 10px 150px;
+    @include tablet{
+      padding:10px 80px;
+    }
+    @include mobile{
+      padding: 10px 30px;
+    }
     @include flexy();
     justify-content: space-between;
 
@@ -25,11 +35,12 @@
         }
         img{
           max-width: 100%;
-          width: 20px;
+          width: 30px;
+          border-radius: 50%;
+          margin-right: 10px;
         }
       }
       .item {
-        // float: right;
         position: absolute;
         right: 80px;
         @include mobile{
@@ -67,7 +78,7 @@
           width: 100%;
           overflow: hidden !important;
           height: 0.1875rem;
-          background: white;
+          background: $primaryColor;
           transform-origin: left;
           transition: all 1.7s ease-in;
         }
@@ -77,17 +88,17 @@
 
   //   change navbar color on hamburger click
   &.active {
-    background: white;
-    color: $mainColor;
+    // background: white;
+    color: $firstB;
 
     .hamburger {
       span {
         &:first-child {
-          background: $mainColor;
+          background: $firstB;
           transform: rotate(45deg);
         }
         &:last-child {
-          background: $mainColor;
+          background: $firstB;
           transform: rotate(-45deg);
         }
         &:nth-child(2) {
