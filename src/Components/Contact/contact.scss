@@ -69,9 +69,6 @@
           width: 200px;
           height: 20px;
         }
-        &:hover {
-          @include shadow();
-        }
         &:active {
           background-color: $primaryColor;
           box-shadow: 0 3px #666;
