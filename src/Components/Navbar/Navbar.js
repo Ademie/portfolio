@@ -8,7 +8,7 @@ function Navbar({ menuOpen, setMenuOpen }) {
       <div className="wrapper">
         <div className="left">
           <a href="#intro" className="logo">
-            <img src="/assets/settings.svg" alt="settings" />
+            <img src="/assets/coding.svg" alt="settings" />
             Ademie
           </a>
 

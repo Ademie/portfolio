@@ -15,10 +15,13 @@ function Menu({ menuOpen, setMenuOpen}) {
                     <a href="#portfolio">Portfolio</a>
                 </li>
                 <li>
-                    <a href="#works">Services</a>
+                    <a href="#works">Work Details</a>
                 </li>
                 <li>
-                    <a href="#testimonials">Testimonials</a>
+                    <a href="#services">Services</a>
+                </li>
+                <li>
+                    <a href="#about">About</a>
                 </li>
                 <li>
                     <a href="#contact">Contact</a>

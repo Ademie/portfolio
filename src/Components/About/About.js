@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./team.scss";
-function Team() {
+import "./about.scss";
+function  About() {
   // set carousel to initial item
   const [currentSlide, setCurrentSlide] = useState(0);
   const data = [
@@ -41,7 +41,7 @@ function Team() {
         setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0);
   };
   return (
-    <div className="works team" id="works">
+    <div className="works about" id="works">
       {/* Carousel Slider */}
       <div
         className="slider"
@@ -87,4 +87,4 @@ function Team() {
   );
 }
 
-export default Team;
+export default About;

@@ -3,7 +3,7 @@ import Intro from "./Components/Intro/Intro";
 import Navbar from "./Components/Navbar/Navbar";
 import Portfolio from "./Components/Portfolio/Portfolio";
 import Works from "./Components/Works/Works";
-import Team from "./Components/Team/Team";
+import About from "./Components/About/About";
 import Services from "./Components/Services/Services";
 import Contact from "./Components/Contact/Contact";
 import './App.scss'
@@ -25,7 +25,7 @@ function App() {
         <Portfolio/>
         <Works/>
         <Services/>
-        <Team/>
+        <About/>
         <Contact/>
       </div>
     </div>

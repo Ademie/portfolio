@@ -87,9 +87,9 @@ function Intro() {
       </a>
 
        {/* ARROW POINTING UPWARDS */}
-       <a href="#intro" className="toparrow" >
+       {/* <a href="#intro" className="toparrow" >
         <BiChevronUpCircle/>
-      </a>
+      </a> */}
     </div>
   );
 }
