@@ -96,7 +96,8 @@
       align-items: center;
     }
     @include mobile{
-      height: 100vh;
+      flex: 2;
+      min-height: calc(100vh - 350px);
     }
       //   social media icons
   .socials {
