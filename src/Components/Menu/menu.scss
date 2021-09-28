@@ -31,10 +31,11 @@
             margin-bottom: 1.2rem;
             a{
                 font-size: inherit;
+                font-weight: 500!important;
                 color: white;
                 &:hover{
-                    color: $primaryColor!important;
-                    font-weight: 1200!important;
+                    color: #0897a7!important;
+                    font-weight: 600!important;
                 }
                 @include mobile{
                     font-size: 80%;
