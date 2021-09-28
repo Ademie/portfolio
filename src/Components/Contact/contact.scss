@@ -95,6 +95,9 @@
       justify-content: center;
       align-items: center;
     }
+    @include mobile{
+      height: 100vh;
+    }
       //   social media icons
   .socials {
     margin-left: -10vw;
