@@ -3,6 +3,8 @@ import "./contact.scss";
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
+import { SiWhatsapp, SiGithub } from "react-icons/si";
+import { TiSocialLinkedinCircular } from "react-icons/ti";
 
 const schema = yup.object().shape({
   email: yup.string().email().required(),
@@ -47,10 +49,31 @@ function Contact() {
         </form>
       </div>
       <div className="right">
-        <img src="/assets/contact.png" alt="" />
-        <h5 style={{ textAlign: "center", color: "white" }}>
-          Designed | <a href="https://ademie.netlify.app" style={{ textDecoration: "underline", color: "white" }}>Ademie</a>
+        <img src="/assets/mike.jpg" alt="" />
+        {/* social links */}
+        <div className="socials">
+            <ul>
+              <li>
+                <a href="https://wa.me/2348102748644">
+                  <SiWhatsapp className="soc_icon" />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/ademie">
+                  <TiSocialLinkedinCircular className="soc_icon" />
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/Ademie">
+                  <SiGithub className="soc_icon" />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <h5 className="design">
+          Design | <a href="https://ademie.netlify.app" style={{ textDecoration: "underline", color: "white" }}>Ademie</a>
         </h5>
+
       </div>
     </div>
   );

@@ -46,7 +46,7 @@ function Intro() {
       {/* LEFT CONTAINER */}
       <div className="left">
         <div className="imgContainer">
-          <img src="assets/mainx.png" alt="" />
+          <img src="assets/mainz0.png" alt="" />
         </div>
       </div>
       {/* RIGHT CONTAINER */}
@@ -87,9 +87,9 @@ function Intro() {
       </a>
 
        {/* ARROW POINTING UPWARDS */}
-       {/* <a href="#intro" className="toparrow" >
+       <a href="#intro" className="toparrow" >
         <BiChevronUpCircle/>
-      </a> */}
+      </a>
     </div>
   );
 }

@@ -19,7 +19,6 @@
     &.active {
       background: $mainColor;
       background: $primaryColor;
-      color: black;
-      // @include shadow();
+      color: #000000;
     }
   }
