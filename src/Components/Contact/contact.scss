@@ -182,6 +182,9 @@
        @include tablet{
         margin-left: 0vw;
        }
+       @include mobile{
+         margin-bottom: 60px;
+       }
       
     }
     
